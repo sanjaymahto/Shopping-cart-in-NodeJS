@@ -27,7 +27,7 @@ module.exports.controllerFunction = function (app) {
             newCart.save(function (err) {
                 if (err) {
                     console.log("Some error");
-                    var myResponse = responseGenerator.generate(true, "Sorry! product can't be added to store roght now..." + err, 500, null);
+                    var myResponse = responseGenerator.generate(true, "Sorry! product can't be added to store right now..." + err, 500, null);
                     //res.send(myResponse);
                     res.render('error', {
                         message: myResponse.message,
@@ -45,7 +45,7 @@ module.exports.controllerFunction = function (app) {
     else
     {
     	 console.log("Some error");
-                    var myResponse = responseGenerator.generate(true, "Sorry! product can't be added to store roght now..." + err, 500, null);
+                    var myResponse = responseGenerator.generate(true, "Sorry! product can't be added to store right now..." + err, 500, null);
                     //res.send(myResponse);
                     res.render('error', {
                         message: myResponse.message,
@@ -60,7 +60,7 @@ module.exports.controllerFunction = function (app) {
         cartModel.find({'userName': req.session.user.userName},function(err, result){
         		if (err) {
                     console.log("Some error");
-                    var myResponse = responseGenerator.generate(true, "Sorry! product can't be added to store roght now..." + err, 500, null);
+                    var myResponse = responseGenerator.generate(true, "Sorry! product can't be added to store right now..." + err, 500, null);
                     //res.send(myResponse);
                     res.render('error', {
                         message: myResponse.message,
