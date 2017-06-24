@@ -1,0 +1,66 @@
+doctype html
+html(lang='en')
+  head
+    title Bootstrap Example
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+      /* Remove the navbar's default rounded borders and increase the bottom margin */
+      .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+      }
+      /* Remove the jumbotron's default bottom margin */
+      .jumbotron {
+      margin-bottom: 0;
+      }
+      /* Add a gray background color and some padding to the footer */
+      footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+      }
+  body
+    .jumbotron
+      .container.text-center
+        h1 CART
+        p Your favourite Items...
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#')
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='http://localhost:3000/users/dashboard') Home
+            li
+              a(href='#')
+            li
+              a(href='#')
+            li
+              a(href='#')
+            li
+              a(href='#')
+          ul.nav.navbar-nav.navbar-right
+             li
+              a(href='http://localhost:3000/users/dashboard')
+                span.glyphicon.glyphicon-user
+                | Hi! #{user.firstName} #{user.lastName}
+             li
+              a(href='http://localhost:3000/users/Ecommercecart')
+                span.glyphicon.glyphicon-shopping-cart
+                |  Cart
+    .container
+     ul
+  for item in cartItems
+    li=item.productName
+    li=item.productCategory
+    li=item.productCost
+    a.btn.btn-info(href='http://localhost:3000/users/Ecommercecartdelete/#{item.productName}', role='button') Remove From Cart!
+    br
